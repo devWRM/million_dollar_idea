@@ -1,6 +1,14 @@
+# rails routes
 Rails.application.routes.draw do
   root "sessions#home"
 
+  get '/signup' => 'users#new'
+  # post '/signup' => 'users#create'      <<= auto built
+
+
+
+
+  # write custom routes above
 
   resources :resources
   resources :supports
