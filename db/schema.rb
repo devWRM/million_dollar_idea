@@ -32,6 +32,8 @@ ActiveRecord::Schema.define(version: 2020_08_31_024522) do
     t.string "title"
     t.string "inspiration"
     t.text "plan"
+    t.integer "budgeted_dollars"
+    t.integer "spent_dollars"
     t.integer "user_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
@@ -45,10 +47,7 @@ ActiveRecord::Schema.define(version: 2020_08_31_024522) do
   end
 
   create_table "supports", force: :cascade do |t|
-    t.integer "budgeted_dollars"
-    t.integer "spent_dollars"
-    t.integer "budgeted_dollars_remaining"
-    t.boolean "within_budget"
+    t.integer "cost"
     t.integer "idea_id", null: false
     t.integer "resource_id", null: false
     t.datetime "created_at", precision: 6, null: false
