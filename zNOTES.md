@@ -1,5 +1,8 @@
 
+rails routes
+localhost:3000/rails/info/routes
 
+=======================================================
 Had to adjust tables
     Took 2 financial columns out of Supports table
     Transferred them to Ideas table
@@ -11,9 +14,14 @@ Had to adjust tables
         t.integer :budgeted_dollars_remaining
         t.boolean :within_budget
 
-
-
     Add a cost column to the Supports table
+
+=======================================================
+
+
+
+
+
 
 
 
