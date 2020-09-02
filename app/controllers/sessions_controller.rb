@@ -1,5 +1,10 @@
 class SessionsController < ApplicationController
     def home
-        render "/sessions/index.html.erb"
+    end
+
+    def destroy
+        session.clear
+        redirect_to root_path
     end
 end
+
