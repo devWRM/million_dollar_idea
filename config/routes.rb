@@ -6,6 +6,10 @@ Rails.application.routes.draw do
   # post '/signup' => 'users#create'      <<= auto built
 
 
+  get '/login' => 'sessions#new'
+  post '/login' => 'sessions#create'
+  delete '/logout' => 'sessions#destroy'
+
 
 
   # write custom routes above
