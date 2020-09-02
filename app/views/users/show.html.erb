@@ -2,5 +2,13 @@
 
 
 
+<%= form_tag("/logout", method: 'delete') do %>
+    <%= submit_tag "LOGOUT" %>
+<% end %>
+
+</br></br>
+
+<%= link_to "logout", logout_path, method: "delete" %>
+
 
 
