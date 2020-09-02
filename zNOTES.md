@@ -64,7 +64,9 @@ FILE app/controllers/sessions_controllers.rb
     Changed from:   views/sessions/index.html.erb 
     Changed to:     views/sessions/home.html.erb
 =======================================================
+SIGNUP
 FILE app/controllers/users_controller.rb
+    FILE views/users/hew.html.erb
 IN THE create action
 
     Signup creates a new user:
@@ -80,4 +82,22 @@ IN THE destroy action
         session.clear
 
 =======================================================
+LOGIN (LOGOUT above)
+FILE app/controllers/sessions_controller.rb
+    FILE views/sessions/new.html.erb
+
+    <%= link_to "Log In", login_path %>
+                - OR use-
+    <%= link_to "Log In", '/login'>
+
+    ORIGIONAL       <a href="/login">LOG IN</a> or <a href="/signup">SIGN UP</a>
+
+NOTE in the create action both lead to the user's show page
+    redirect_to user_path(user)
+    redirect_to "/users/#{user.id}"
+
+=======================================================
+
+
+
 
