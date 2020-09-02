@@ -78,7 +78,7 @@ IN THE create action
 
 FILE app/controllers/sessions_controller.rb
 IN THE destroy action
-    Logout by deleting the session's user_id:
+    LOGOUT by deleting the session's user_id:
         session.clear
 
 =======================================================
