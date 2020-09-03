@@ -1,0 +1,22 @@
+<h1>Create a new idea form</h1>
+
+<%= form_for(@idea) do |f| %>
+    <%= f.label :title %>
+    <%= f.text_field :title %>
+        </br></br>
+    <%= f.label :inspiration %>
+    <%= f.text_field :inspiration %>
+        </br></br>
+    <%= f.label :plan %>
+    <%= f.text_area :plan %>
+        </br></br>
+    <%= f.label :budgeted_dollars %>
+    <%= f.text_field :budgeted_dollars %>
+        </br></br>
+    <%= f.label :spent_dollars %>
+    <%= f.text_field :spent_dollars %>
+        </br></br>
+    <%= f.submit "SUBMIT" %>
+
+<% end %>
+
