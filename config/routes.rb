@@ -30,8 +30,8 @@ Rails.application.routes.draw do
   end
 
 
-  resources :ideas  
-  resources :users
+  resources :users    # ?? May not need this route
+  resources :ideas    # ?? May not need this route
 
   resources :supports
   resources :goals
