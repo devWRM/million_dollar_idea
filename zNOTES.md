@@ -2,6 +2,8 @@
 rails routes
 localhost:3000/rails/info/routes
 
+NOTE @user.username == current_user
+
 =======================================================
 Had to adjust tables
     Took 2 financial columns out of Supports table
