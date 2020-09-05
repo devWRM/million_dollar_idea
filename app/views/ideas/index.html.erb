@@ -1,4 +1,21 @@
-<h1>List all ideas</h1>
+
+<% if @user %>
+
+    <h1>List all ideas for <%= @user.username %></h1>
+
+
+<% else %>
+
+    <h1>ALL &nbsp &nbsp IDEAS</h1>
+
+<% end %>
+
+
+<% @ideas.each do |idea| %>
+
+    <%= idea.title %></br></br>
+
+<% end %>
 
 
 
