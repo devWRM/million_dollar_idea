@@ -5,6 +5,16 @@ class IdeasController < ApplicationController
 #   t.integer :budgeted_dollars_remaining
 #   t.boolean :within_budget
 
+
+    def index       
+        if params[:user_id] && @user = User.find_by_id(params[:user_id])
+            @ideas = @user.ideas
+        else
+            @error = "That user doesn't exist" if params[:user_id]
+            @ideas = Idea.all
+        end
+    end
+
     def show
         @idea = Idea.find_by_id(params[:id])
         redirect_to ideas_path if !@idea
@@ -22,7 +32,7 @@ class IdeasController < ApplicationController
             # redirect_to idea_path
             redirect_to ideas_path
         else
-            flash[:message] = "Received"
+            flash[:message] = "Received invalid input, please try again."
             render :new
         end
     end
