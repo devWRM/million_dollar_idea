@@ -1,4 +1,4 @@
-<h1>Create a new idea form</h1>
+<h1>Create a new idea, <%= current_user.username %></h1>
 
 <%= form_for(@idea) do |f| %>
     <%= f.label :title %>
