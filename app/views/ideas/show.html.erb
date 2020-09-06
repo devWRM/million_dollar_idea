@@ -1,6 +1,31 @@
-<h1>Idea Title: <%= @idea.title %></h1>
+<h1>Idea Title: <%= @idea.title %></h1></br>
+
+    <h4> See all Resources or Add a Resource new_idea_support_path(@idea)</h4>
+    <h4> See all Categories or Add a Category new_idea_goal_path(@idea)</h4>
+
+</br></br>
+    <h2>Inspiration:</h2>
+    <h3><%= @idea.inspiration %></h3>
+        </br>
+    <h2>Plan:</h2>
+    <h3><%= @idea.plan %></h3>
+        </br>
+    <h2>Budgeted Dollars:</h2>
+    <h3><%= @idea.budgeted_dollars %></h3>
+            </br>
+    <h2>Spent Dollars:</h2>
+    <h3><%= @idea.spent_dollars %></h3>
+            </br>
+    <h2>Budgeted Dollars Remaining:</h2>
+    <h3><%= %></h3>
+            </br>
+    <h2>Within Budget:</h2>
+    <h3><%= %></h3>
+   
+            
 
 
-
-
+<% # AUTO GENERATE %>
+<% # t.integer :budgeted_dollars_remaining %>
+<% # t.boolean :within_budget %>
 
