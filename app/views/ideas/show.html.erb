@@ -1,7 +1,7 @@
 <h1>Idea Title: <%= @idea.title %></h1></br>
 
-    <h4> See all Resources or Add a Resource new_idea_support_path(@idea)</h4>
-    <h4> See all Categories or Add a Category new_idea_goal_path(@idea)</h4>
+    <%= link_to "See all Resources", idea_resources_path(@idea) %> or <%= link_to "Add a Resource", new_idea_resource_path(@idea) %></br>
+    <%= link_to "See all Categories", idea_categories_path(@idea) %> or <%= link_to "Add a Category", new_idea_category_path(@idea) %>
 
 </br></br>
     <h2>Inspiration:</h2>
