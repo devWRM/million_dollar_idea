@@ -12,8 +12,8 @@
 
 
 <% @ideas.each do |idea| %>
-
-    <%= idea.title %></br></br>
+    USER: <%= link_to idea.user.username, user_ideas_path(idea.user) %></br>
+    IDEA:<%= link_to idea.title,  idea_path(idea)%></br></br>
 
 <% end %>
 
