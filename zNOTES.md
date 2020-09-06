@@ -100,6 +100,15 @@ NOTE in the create action both lead to the user's show page
 
 =======================================================
 
+FILE app/views/ideas/show.html.erb
+
+   <h4> See all Resources or Add a Resource new_idea_support_path(@idea)</h4>
+    <h4> See all Categories or Add a Category new_idea_goal_path(@idea)</h4>
+
+_____________
+
+FILE config/routes.rb
+
 
 
 
