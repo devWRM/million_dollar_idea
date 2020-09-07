@@ -1,1 +1,27 @@
 <h1>Create a new Resource, <%= current_user.username %></h1>
+<h1><%= @idea.title %>
+
+
+<%= form_for([@idea, @resource]) do |f| %>
+
+    <% if !@idea %>
+        <%= f.label :idea %>
+        <%= f.collection_select :idea_id, Idea.all, :id, :title %>
+    <% end %>
+        </br></br>
+
+    <%= f.label "Resource" %>
+    <%= f.text_field :source %>
+    
+    
+    <%= f.submit "SUBMIT" %>
+
+<% end %>
+
+
+
+
+
+
+
+

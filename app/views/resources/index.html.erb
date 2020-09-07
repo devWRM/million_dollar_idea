@@ -1,1 +1,12 @@
-<h1>List All Resources</h1>
+
+
+<h2>All Resources<% if @idea %> for: <%= @idea.title %> <% end %><h2>
+
+<h4>
+<ul>
+    <% @resources.each do |resource| %>
+        <li><%= resource.source %></li></br>
+    <% end %>
+<ul>
+</h4>
+
