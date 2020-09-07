@@ -21,6 +21,8 @@ Rails.application.routes.draw do
     resources :categories, only: [:new, :create, :index]
   end
 
+  resources :resources
+  resources :categories
 
   # Reduced to just the index
   resources :users do
@@ -32,8 +34,7 @@ Rails.application.routes.draw do
     # resources :goals, only: [:index] #:new, :create       <<= All a specific user’s goals
   end
 
-  resources :resources
-  resources :categories
+  
   resources :supports
   resources :goals
 
