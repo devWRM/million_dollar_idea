@@ -1,4 +1,5 @@
 
+
 rails routes
 localhost:3000/rails/info/routes
 
@@ -102,12 +103,32 @@ NOTE in the create action both lead to the user's show page
 
 FILE app/views/ideas/show.html.erb
 
-   <h4> See all Resources or Add a Resource new_idea_support_path(@idea)</h4>
-    <h4> See all Categories or Add a Category new_idea_goal_path(@idea)</h4>
+   <h4> See all Resources or Add a Support new_idea_support_path(@idea)</h4>
+    <h4> See all Categories or Add a Goal new_idea_goal_path(@idea)</h4>
 
 _____________
+ORIGINAL
+FILE app/views/resources/new.html.erb
 
-FILE config/routes.rb
+<h1>Create a new Resource, <%= current_user.username %></h1>
+
+<%= form_for([@idea, @resource]) do |f| %>
+    <%= f.label :source %>
+    <%= f.text_field :source %>
+        </br></br>
+    
+    
+    <%= f.submit "SUBMIT" %>
+
+<% end %>
+
+=======================================================
+EXAMPLE Migration to add column to a table
+rails generate migration AddTitleBodyToPost title:string
+
+rails g migration AddIdeaIdToResource idea_id:belongs_to
+=======================================================
+
 
 
 
