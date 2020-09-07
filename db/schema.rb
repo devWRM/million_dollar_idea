@@ -42,8 +42,10 @@ ActiveRecord::Schema.define(version: 2020_08_31_024522) do
 
   create_table "resources", force: :cascade do |t|
     t.string "source"
+    t.integer "idea_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.index ["idea_id"], name: "index_resources_on_idea_id"
   end
 
   create_table "supports", force: :cascade do |t|
@@ -67,6 +69,7 @@ ActiveRecord::Schema.define(version: 2020_08_31_024522) do
   add_foreign_key "goals", "categories"
   add_foreign_key "goals", "ideas"
   add_foreign_key "ideas", "users"
+  add_foreign_key "resources", "ideas"
   add_foreign_key "supports", "ideas"
   add_foreign_key "supports", "resources"
 end
