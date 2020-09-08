@@ -1,4 +1,13 @@
 
+<% if @idea %><%= link_to "Click to add another resource", new_idea_resource_path(@idea) %>
+
+
+<%= link_to "Add another resource", new_idea_resource_path(@idea) if @idea %>
+
+<% if @idea %><%= link_to "Click to add another resource", idea_path(@idea) %><% end %>
+
+
+
 
 rails routes
 localhost:3000/rails/info/routes
