@@ -23,7 +23,7 @@ class ResourcesController < ApplicationController
             @resource = @idea.resources.build
            
         else
-            flash[:message] = "That idea belongs to another user or doesn't exist. Select one of your ideas below to add a resource." if params[:idea_id]
+            flash[:message] = "Please select one of your ideas below to add a resource." if params[:idea_id]
             flash[:message] = "Select one of your ideas below to add a resource" if !params[:idea_id]
 
             # @error = "That idea doesn't exist" if params[:idea_id]
@@ -34,17 +34,16 @@ class ResourcesController < ApplicationController
 
 
     def create
+        # @resource = current_user.resources.build(resource_params)
         @idea = Idea.find_by_id(params[:idea_id])
         @resource = @idea.resources.build(resource_params)
 
-        if params[:resource][:source].empty? || !@resource.save
-            @error = "Please enter a resource"
-            render :new
-        else
-
-             @resource.save
+        if @resource.save
             flash[:message] = "Your resource has been saved."
             redirect_to idea_resources_path(@idea)
+        else
+            @error = "Please enter a resource"
+            render :new
         end
     end
 
@@ -52,8 +51,8 @@ class ResourcesController < ApplicationController
     private
 
     def resource_params
-        params.require(:resource).permit(:source, :idea_id)
-    end
+        params.require(:resource).permit(:source, :idea_id)     # <<= Why :idea_id is needed
+    end                                                         # but ideas_controller don't need user_id
 
 
 
