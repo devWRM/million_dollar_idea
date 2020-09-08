@@ -128,8 +128,15 @@ rails generate migration AddTitleBodyToPost title:string
 
 rails g migration AddIdeaIdToResource idea_id:belongs_to
 =======================================================
+Display an error message for:
+FILE app/views/resources/new.html.erb
 
-
-
+<% if @idea.errors.any? %>
+<ul>
+<% @article.errors.full_messages.each do |msg| %>
+  <li><%= msg %></li>
+<% end %>
+</ul>
+<% end %>
 
 
