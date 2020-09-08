@@ -13,47 +13,46 @@ class ResourcesController < ApplicationController
     end
 
     def new
+        @idea = Idea.find_by_id(params[:idea_id])
 
-        if params[:idea_id] && @idea = Idea.find_by_id(params[:idea_id])
+        if  params[:idea_id] && @idea && current_user == @idea.user
+            
+            # current_user != @idea.user
+            
             # @resource = Resource.new
             @resource = @idea.resources.build
            
         else
-            @error = "That idea doesn't exist" if params[:idea_id]
-            redirect_to ideas_path
+            flash[:message] = "That idea belongs to another user or doesn't exist. Select one of your ideas below to add a resource." if params[:idea_id]
+            flash[:message] = "Select one of your ideas below to add a resource" if !params[:idea_id]
+
+            # @error = "That idea doesn't exist" if params[:idea_id]
+            redirect_to user_ideas_path(current_user)
             # @resource = Resource.new
         end      
     end
 
+
     def create
-        
-        # @resource = Resource.new(params[:resource][:source])
-        # @user = User.find_by_id(params[:user_id])
+        @idea = Idea.find_by_id(params[:idea_id])
+        @resource = @idea.resources.build(resource_params)
 
-        # @ideas = @user.ideas
-        # @idea.resources << params[:resource][:source]
-
-        if params[:idea_id] && @idea = Idea.find_by_id(params[:idea_id])   # @resource.save
-
-            flash[:message] = "Your resource has been saved."
-            Resource.create(idea_id: params[:idea_id], source: params[:resource][:source])
-            # @idea.resources << params[:resource][:source]
-            redirect_to resources_path(@idea)
-        else
-            # ?? Should be error message ??
-            flash[:message] = "Please try again."
+        if params[:resource][:source].empty? || !@resource.save
+            @error = "Please enter a resource"
             render :new
+        else
+
+             @resource.save
+            flash[:message] = "Your resource has been saved."
+            redirect_to idea_resources_path(@idea)
         end
-
-
     end
-
 
 
     private
 
     def resource_params
-        params.require(:resource).permit(:source)
+        params.require(:resource).permit(:source, :idea_id)
     end
 
 

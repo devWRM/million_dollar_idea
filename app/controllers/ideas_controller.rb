@@ -17,6 +17,8 @@ class IdeasController < ApplicationController
 
     def show
         @idea = Idea.find_by_id(params[:id])
+        flash[:message] = "That idea doesn't exist" if !@idea
+
         redirect_to ideas_path if !@idea
     end
 
