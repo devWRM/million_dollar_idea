@@ -4,4 +4,5 @@ class Resource < ApplicationRecord
 
     belongs_to :idea     # To enable:     resource.idea
 
+    validates :source, presence: true
 end
