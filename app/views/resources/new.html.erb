@@ -1,5 +1,5 @@
-<h1>Create a new Resource, <%= current_user.username %></h1>
-<h1><%= @idea.title %>
+
+<h2><%= current_user.username %>, create a new resource for:</br> <%= @idea.title %></h2>
 
 
 <%= form_for([@idea, @resource]) do |f| %>
