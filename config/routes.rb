@@ -10,10 +10,14 @@ Rails.application.routes.draw do
   post '/login' => 'sessions#create'
   delete '/logout' => 'sessions#destroy'
 
+  ### get '/auth/google_oauth2', to: 'sessions#google'
+  # omniauth callback routes below, user either
+  # get "/auth/:provider/callback" => 'sessions#google'         <<= :provider is dynamic variable for multiple omniauth
+  get "/auth/google_oauth2/callback" => 'sessions#google'     # <<= exact for 1 omniauth
+
 
   # write custom routes above
 
-  
   resources :ideas do
     # resources :supports, only: [:new, :create, :index]    # <<= All a specific idea’s supports
     # resources :goals, only: [:new, :create, :index]       # <<= All a specific idea’s goals
