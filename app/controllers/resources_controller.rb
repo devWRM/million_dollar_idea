@@ -12,6 +12,19 @@ class ResourcesController < ApplicationController
 
     end
 
+    def show
+
+        @resource = Resource.find_by_id(params[:id])
+        
+        if @resource
+            @idea = @resource.idea
+        else
+            flash[:message] = "That resource doesn't exist"
+            redirect_to resources_path
+        end
+    end
+
+
     def new
         @idea = Idea.find_by_id(params[:idea_id])
 
@@ -51,7 +64,7 @@ class ResourcesController < ApplicationController
     private
 
     def resource_params
-        params.require(:resource).permit(:source, :idea_id)     # <<= Why :idea_id is needed
+        params.require(:resource).permit(:source)     # <<= Why :idea_id is needed
     end                                                         # but ideas_controller don't need user_id
 
 
