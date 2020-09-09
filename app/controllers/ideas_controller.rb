@@ -29,7 +29,6 @@ class IdeasController < ApplicationController
 
     def create
         @idea = current_user.ideas.build(idea_params)
-
         if @idea.save
             # redirect_to idea_path
             redirect_to user_ideas_path(current_user)
