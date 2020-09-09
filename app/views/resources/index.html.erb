@@ -10,6 +10,8 @@
 <ul>
 </h4>
 
-<% if @idea %><%= link_to "Click to add another resource", new_idea_resource_path(@idea) %><% end %>
+<% if @idea && current_user == @idea.user %>
+    <%= link_to "Add a resource", new_idea_resource_path(@idea) %>
+<% end %>
 
 
