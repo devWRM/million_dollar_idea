@@ -1,5 +1,9 @@
 
-<h2>All Ideas<% if @user %> by you, <%= @user.username %> <% end %><h2>
+<h2>All Ideas<% if @user %>
+     by<% if current_user == @user %> you<% end %>, 
+        <%= @user.username %>
+
+<% end %><h2>
 
 
 
