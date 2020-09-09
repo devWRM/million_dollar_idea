@@ -1,13 +1,13 @@
 
-<h2>All Ideas<% if @user %> for: <%= @user.username %> <% end %><h2>
+<h2>All Ideas<% if @user %> by you, <%= @user.username %> <% end %><h2>
 
 
 
 <h4>
 <ul>
 <% @ideas.each do |idea| %>
-    <li><% if !@user %>User: <%= link_to idea.user.username, user_ideas_path(idea.user) %></br><% end %>
-    Idea: <%= link_to idea.title,  idea_path(idea)%></li></br>
+    <li>Idea: <%= link_to idea.title,  idea_path(idea)%></br>
+    <% if !@user %>by <%= link_to idea.user.username, user_ideas_path(idea.user) %><% end %></li></br>
 
 <% end %>
 </ul>
