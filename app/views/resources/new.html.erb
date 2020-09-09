@@ -1,14 +1,10 @@
 
-<h2><%= current_user.username %>, create a new resource for:</br> <%= @idea.title %></h2>
+<h3><%= current_user.username %>, create a new resource for:</h3>
+<h2><%= @idea.title %></h2>
 
 
 <%= form_for([@idea, @resource]) do |f| %>
 
-    <% if !@idea %>
-        <%= f.label :idea %>
-        <%= f.collection_select :idea_id, Idea.all, :id, :title %>
-    <% end %>
-        </br></br>
 
     <%= f.label "Resource" %>
     <%= f.text_field :source %>
