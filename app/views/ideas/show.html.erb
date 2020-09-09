@@ -1,7 +1,10 @@
 <h2>Idea Title: <%= @idea.title %></h2></br>
 
-    <%= link_to "See all Resources", idea_resources_path(@idea) %> or <%= link_to "Add a Resource", new_idea_resource_path(@idea) %></br>
-    <%= link_to "See all Categories", idea_categories_path(@idea) %> or <%= link_to "Add a Category", new_idea_category_path(@idea) %>
+    <%= link_to "See resources", idea_resources_path(@idea) %> for <%= @idea.title %></br>
+    <% if current_user == @idea.user %>
+        <%= link_to "Add a Resource", new_idea_resource_path(@idea) %> to <%= @idea.title %></br>
+    <% end %>
+    
 
 </br></br>
     <h2>Inspiration:</h2>
