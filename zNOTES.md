@@ -1,4 +1,32 @@
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+The CATEGORIES
+FILE app/view/ideas/show.html.erb
+    <%= link_to "ALL Categories for Cookie Diet", idea_categories_path(@idea) %> or <%= link_to "Add a Category", new_idea_category_path(@idea) %>
+
+
+
+
+
+
+<%= link_to "Idea for resource", @resource.idea %>
+
+
 <% if @idea %><%= link_to "Click to add another resource", new_idea_resource_path(@idea) %>
 
 
