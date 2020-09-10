@@ -11,7 +11,7 @@ class IdeasController < ApplicationController
             @ideas = @user.ideas
         else
             @error = "That user doesn't exist" if params[:user_id]
-            @ideas = Idea.all
+            @ideas = Idea.all.alpha.reverse
         end
     end
 
