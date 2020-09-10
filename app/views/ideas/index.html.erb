@@ -1,20 +1,28 @@
 
+<% if @ideas.blank? %>
+
+<h2>You have no ideas, <%= @user.username %>. Create an idea <%= link_to "here", new_idea_path%></h2>
+
+<% else %>
+
 <h2>All Ideas<% if @user %>
      by<% if current_user == @user %> you<% end %>, 
         <%= @user.username %>
 
 <% end %><h2>
 
-
-
-<h4>
-<ul>
-<% @ideas.each do |idea| %>
-    <li>Idea: <%= link_to idea.title,  idea_path(idea)%> (resource: <%= idea.resources.count %>)</br>
-    <% if !@user %>by <%= link_to idea.user.username, user_ideas_path(idea.user) %><% end %></li></br>
-
 <% end %>
-</ul>
-</h4>
+
+
+
+    <h4>
+    <ul>
+    <% @ideas.each do |idea| %>
+        <li>Idea: <%= link_to idea.title,  idea_path(idea)%> (resource: <%= idea.resources.count %>)</br>
+        <% if !@user %>by <%= link_to idea.user.username, user_ideas_path(idea.user) %><% end %></li></br>
+
+    <% end %>
+    </ul>
+    </h4>
 
 
