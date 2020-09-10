@@ -7,4 +7,5 @@ class Idea < ApplicationRecord
 
   has_many :resources   # To enable:  resource.idea
 
+  scope :alpha, -> { order(:title) }
 end
