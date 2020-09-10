@@ -8,12 +8,17 @@
 
 
 
+Rails app build resources
+    https://learn.co/tracks/online-software-engineering-structured/procedural-ruby/variables-and-methods/method-scope
+
+    https://medium.com/swlh/google-authentication-strategy-for-rails-5-application-cd37947d2b1b
+
+    https://github.com/zquestz/omniauth-google-oauth2
 
 
 
 
-
-
+========================================
 
 The CATEGORIES
 FILE app/view/ideas/show.html.erb
