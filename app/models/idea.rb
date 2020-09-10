@@ -7,5 +7,6 @@ class Idea < ApplicationRecord
 
   has_many :resources   # To enable:  resource.idea
 
+  validates :title, :inspiration, :plan, :budgeted_dollars, :spent_dollars, presence: true
   scope :alpha, -> { order(:title) }
 end
