@@ -1,5 +1,16 @@
 <h2>Create a new idea, <%= current_user.username %></h2>
 
+
+
+
+<% # render _errors partial from layout, pass in @idea as class_object %>
+<% # Partials 3.4.4 Passing Local Variables documentation:    https://guides.rubyonrails.org/layouts_and_rendering.html %>
+
+<%= render partial: "layouts/errors", locals: {class_object: @idea} %>
+
+
+
+
 <%= form_for(@idea) do |f| %>
 
     
