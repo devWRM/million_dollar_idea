@@ -10,7 +10,7 @@
 <h4>
 <ul>
 <% @ideas.each do |idea| %>
-    <li>Idea: <%= link_to idea.title,  idea_path(idea)%></br>
+    <li>Idea: <%= link_to idea.title,  idea_path(idea)%> (resource: <%= idea.resources.count %>)</br>
     <% if !@user %>by <%= link_to idea.user.username, user_ideas_path(idea.user) %><% end %></li></br>
 
 <% end %>
