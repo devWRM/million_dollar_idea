@@ -1,5 +1,6 @@
-
-
+!!!!!!! **** In Gemfile move dotenv to test block for Heroku **** !!!!!!!
+    06:00 Video Reference:    https://www.youtube.com/watch?v=9pD0uXLI5uE
+    NOTE gem 'omniauth-rails-csrf-protection'
 
 
 
