@@ -2,8 +2,10 @@
 
     <%= link_to "See resources", idea_resources_path(@idea) %> for <%= @idea.title %></br>
     <% if current_user == @idea.user %>
-        <%= link_to "Add a Resource", new_idea_resource_path(@idea) %> to <%= @idea.title %></br>
-    <% end %>
+        <%= link_to "Add a Resource", new_idea_resource_path(@idea) %> to <%= @idea.title %></br></br>
+        Edit: <%= link_to @idea.title, edit_idea_path(@idea) %></br>
+        Delete: <%= link_to @idea.title, edit_idea_path(@idea) %></br>
+        <% end %>
     
 
 </br></br>
