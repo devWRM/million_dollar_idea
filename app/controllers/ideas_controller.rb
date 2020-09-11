@@ -47,10 +47,13 @@ class IdeasController < ApplicationController
     def update
         @idea = Idea.find_by_id(params[:id])
         redirect_to user_ideas_path(current_user) if !@idea || @idea.user != current_user
-
-        @idea.save
-
-
+        
+        if @idea.update(idea_params)
+            redirect_to idea_path(@idea)
+        else
+            # @error = "Received invalid input. Please try again."
+            render :edit
+        end
     end
 
 
