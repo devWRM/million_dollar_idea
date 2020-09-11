@@ -4,7 +4,8 @@
 
 
 
-
+> resource =>> has_many :ideas, through: :supports
+    > idea =>> has_many :supported_resources, through: :supports, source: :resource
 
 
 
