@@ -40,7 +40,7 @@ class SessionsController < ApplicationController
 
 
     def destroy
-        # Logout
+        # Logout also:      session.delete(:user_id)
         session.clear
         redirect_to root_path
     end
