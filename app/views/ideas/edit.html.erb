@@ -1,0 +1,39 @@
+
+<h1>Ready to improve on your idea, <%= current_user.username %>?</h1>
+
+<h2>Edit: <%= @idea.title %></h2>
+
+
+<%= render partial: "layouts/errors", locals: {class_object: @idea} %>
+
+
+
+<%= form_for @idea do |f| %>
+
+<%= f.label :title %>
+<%= f.text_field :title %>
+    </br></br>
+
+<%= f.label :inspiration %>
+<%= f.text_field :inspiration %>
+    </br></br>
+
+<%= f.label :plan %>
+<%= f.text_field :plan %>
+    </br></br>
+
+<%= f.label :budgeted_dollars %>
+<%= f.number_field :budgeted_dollars %>
+    </br></br>
+
+<%= f.label :spent_dollars %>
+<%= f.number_field :spent_dollars %>
+    </br></br>
+
+<%= f.submit "EDIT" %>
+
+<% end %>
+
+
+
+<% # edit_idea_path(@idea) %>
