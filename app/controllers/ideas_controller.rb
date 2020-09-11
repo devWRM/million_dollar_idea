@@ -56,6 +56,15 @@ class IdeasController < ApplicationController
         end
     end
 
+    def destroy
+     
+        # session.delete(:user_id)
+        @idea = Idea.find_by_id(params[:id])
+
+        @idea.destroy if @idea.user == current_user
+        redirect_to user_ideas_path(current_user)
+    end
+
 
 
 
