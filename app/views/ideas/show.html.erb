@@ -4,9 +4,12 @@
     <% if current_user == @idea.user %>
         <%= link_to "Add a Resource", new_idea_resource_path(@idea) %> to <%= @idea.title %></br></br>
         Edit: <%= link_to @idea.title, edit_idea_path(@idea) %></br>
-        Delete: <%= link_to @idea.title, edit_idea_path(@idea) %></br>
+        Delete: <%= link_to @idea.title, idea_path(@idea), method: "delete" %></br>
         <% end %>
     
+
+
+
 
 </br></br>
     <h2>Inspiration:</h2>
