@@ -39,6 +39,20 @@ class IdeasController < ApplicationController
     end
 
 
+    def edit
+        @idea = Idea.find_by_id(params[:id])
+        redirect_to user_ideas_path(current_user) if !@idea || @idea.user != current_user
+    end
+
+    def update
+        @idea = Idea.find_by_id(params[:id])
+        redirect_to user_ideas_path(current_user) if !@idea || @idea.user != current_user
+
+        @idea.save
+
+
+    end
+
 
 
 
