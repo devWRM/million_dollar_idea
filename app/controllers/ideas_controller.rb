@@ -33,7 +33,7 @@ class IdeasController < ApplicationController
             # redirect_to idea_path
             redirect_to user_ideas_path(current_user)
         else
-            flash[:message] = "Received invalid input, please try again."
+            # flash[:message] = "Received invalid input, please try again."
             render :new
         end
     end
