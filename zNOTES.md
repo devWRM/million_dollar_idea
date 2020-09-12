@@ -184,3 +184,26 @@ FILE app/views/resources/new.html.erb
 <% end %>
 
 
+=======================================================
+Transfered to ideas_helper.rb
+FILE views/ideas/index.html.erb
+
+<% if @ideas.blank? %>
+
+    <h2>You currently have no ideas, <%= @user.username %>. Create an idea <%= link_to "here", new_idea_path%></h2>
+
+<% else %>
+
+    <h2>All Ideas<% if @user %>
+        by<% if current_user == @user %> you<% end %>, <%= @user.username %>
+    <% end %><h2>
+
+<% end %>
+
+
+=======================================================
+Transfered to resources_helper.rb
+FILE views/resources/index.html.erb
+
+<h2>All Resources<% if @idea %> for: <%= @idea.title %> <% end %><h2>
+
