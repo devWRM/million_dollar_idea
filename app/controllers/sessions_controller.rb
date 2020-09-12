@@ -19,6 +19,7 @@ class SessionsController < ApplicationController
         else
             flash[:message] = "Received invalid login information. Please try again."
             redirect_to login_path
+            # So user's input will NOT re-populate
         end
     end
 
