@@ -56,8 +56,8 @@ Confirm:
 - [x] Limited logic in controllers
     > limited logic
 
-- [ ] Views use helper methods if appropriate
-    > 
+- [x] Views use helper methods if appropriate
+    > resources index =>> resource_index_heading
 
 - [x] Views use partials if appropriate
-    > views/layouts/_errors.html.erb
+    > render partial: "layouts/errors" =>> views/layouts/_errors.html.erb
