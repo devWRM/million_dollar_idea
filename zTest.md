@@ -1,3 +1,19 @@
+
+
+
+categories_path             /categories
+  all categories
+
+user_categories_path        /users/:user_id/categories
+  all categories that belong to a single user
+
+category_ideas_path         /categories/:category_id/ideas
+  all ideas that belongs to a single category
+
+
+
+_________________
+
 Trial Solutions for Selecion drop down menu & add a category
 
   Use only the drop down: Removed from views/ideas/new.html.erb
@@ -10,9 +26,6 @@ Trial Solutions for Selecion drop down menu & add a category
                     <%= category_attribute.text_field :label %>
                 <% end %>
             </div>
-
-
-
 
 
   Use if else statement in the form
