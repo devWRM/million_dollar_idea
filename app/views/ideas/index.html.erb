@@ -7,7 +7,8 @@
 <% else %>
 
 <h2>All Ideas<% if @user %>
-    by<% if current_user == @user %> you<% end %>, <%= @user.username %>
+    by<% if current_user == @user %> you<% end %>, <%= @user.username %><h2>
+    <h4><%= link_to "Categories", user_categories_path(@user)%></h4>
 <% end %><h2>
 
 <% end %>
