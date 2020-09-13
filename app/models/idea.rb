@@ -1,7 +1,7 @@
 class Idea < ApplicationRecord
   belongs_to :user
-  # has_many :goals, :dependent => :destroy					
-  # has_many :categories, through: :goals			
+  belongs_to :category
+    
   has_many :supports, :dependent => :destroy
   has_many :supported_resources, through: :supports, source: :resource
 
