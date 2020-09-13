@@ -18,16 +18,6 @@ ActiveRecord::Schema.define(version: 2020_08_31_024522) do
     t.datetime "updated_at", precision: 6, null: false
   end
 
-  create_table "goals", force: :cascade do |t|
-    t.string "statement"
-    t.integer "idea_id", null: false
-    t.integer "category_id", null: false
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-    t.index ["category_id"], name: "index_goals_on_category_id"
-    t.index ["idea_id"], name: "index_goals_on_idea_id"
-  end
-
   create_table "ideas", force: :cascade do |t|
     t.string "title"
     t.string "inspiration"
@@ -35,8 +25,10 @@ ActiveRecord::Schema.define(version: 2020_08_31_024522) do
     t.integer "budgeted_dollars"
     t.integer "spent_dollars"
     t.integer "user_id", null: false
+    t.integer "category_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.index ["category_id"], name: "index_ideas_on_category_id"
     t.index ["user_id"], name: "index_ideas_on_user_id"
   end
 
@@ -66,8 +58,7 @@ ActiveRecord::Schema.define(version: 2020_08_31_024522) do
     t.datetime "updated_at", precision: 6, null: false
   end
 
-  add_foreign_key "goals", "categories"
-  add_foreign_key "goals", "ideas"
+  add_foreign_key "ideas", "categories"
   add_foreign_key "ideas", "users"
   add_foreign_key "resources", "ideas"
   add_foreign_key "supports", "ideas"
