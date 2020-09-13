@@ -29,6 +29,17 @@
     <%= f.label :spent_dollars %>
     <%= f.number_field :spent_dollars %>
         </br></br>
+
+
+     
+        <p>Select a Category: </p>
+            <div>
+                <%= f.collection_select :category_id, Category.all, :id, :label %>
+            </div>
+
+
+
+        </br></br>
     <%= f.submit "SUBMIT" %>
 
 <% end %>
