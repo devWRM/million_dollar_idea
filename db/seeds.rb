@@ -21,6 +21,11 @@ dee = User.create(username: "DeAnna", email: "dee@email.com", password: "dee")
 
 cat1 = Category.create(label: "Recreation")
 cat2 = Category.create(label: "Food")
+cat3 = Category.create(label: "Beverage")
+cat4 = Category.create(label: "Entertainment")
+cat5 = Category.create(label: "Clothing")
+cat6 = Category.create(label: "Footwear")
+cat7 = Category.create(label: "Health")
 
 
 i1 = Idea.create(title: "Cookie Diet", inspiration: "Love cookies but they wreck my waistline", plan: "Create weight-loss cookies.", budgeted_dollars: 7700, spent_dollars: 700, category_id: 2, user_id: 4)
