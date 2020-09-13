@@ -52,3 +52,13 @@ ORIGINAL resources_controllers.rb (create action)
 
 
      end
+
+
+
+# accepts_nested_attributes_for :category
+# delegate :label, to: :category
+
+<%= f.collection_select :category_id, Category.all, :id, :label, include_blank: true %>
+
+
+

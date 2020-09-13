@@ -1,3 +1,27 @@
+Trial Solutions for Selecion drop down menu & add a category
+
+  Use only the drop down: Removed from views/ideas/new.html.erb
+
+
+        <p>Or create a new Category: </p>
+            <div>
+                <%= f.fields_for :category do |category_attribute| %>
+                    
+                    <%= category_attribute.text_field :label %>
+                <% end %>
+            </div>
+
+
+
+
+
+  Use if else statement in the form
+
+  add category validation for label in the category model class
+  [add category to idea's validation in the idea model class]
+
+BJ suggested:
+  https://stackoverflow.com/questions/50448546/rails-5-combine-dropdown-with-text-field
 
 
 
@@ -5,6 +29,22 @@
 
 
 
+
+_________________
+
+FILE views.ideas/new.html.erb
+NOTES Removed from below so the word label doesn't show in user's browser:
+  <%= category_attribute.label :label %>
+
+
+
+<p>Or create a new Category: </p>
+            <div>
+                <%= f.fields_for :category do |category_attribute| %>
+                    <%= category_attribute.label :label %>
+                    <%= category_attribute.text_field :label %>
+                <% end %>
+            </div>
 
 _________________
 
