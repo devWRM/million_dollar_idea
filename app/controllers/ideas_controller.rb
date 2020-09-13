@@ -25,6 +25,7 @@ class IdeasController < ApplicationController
 
     def new
         @idea = Idea.new
+        @idea.build_category
     end
 
     def create
@@ -71,7 +72,7 @@ class IdeasController < ApplicationController
     private
 
     def idea_params
-        params.require(:idea).permit(:title, :inspiration, :plan, :budgeted_dollars, :spent_dollars)
+        params.require(:idea).permit(:title, :inspiration, :plan, :budgeted_dollars, :spent_dollars, :category_id, category_attributes: [:label])
     end
 
 
