@@ -1,0 +1,5 @@
+<h2>All Categories<% if @user %> for <%= @user.username %><% end %></h2>
+
+<% @categories.each do |category| %>
+    <%= category.label %></br>
+<% end %>
