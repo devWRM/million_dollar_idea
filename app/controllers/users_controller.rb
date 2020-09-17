@@ -1,6 +1,16 @@
 class UsersController < ApplicationController
+    before_action :redirect_if_not_logged_in
 
-    
+    def index
+        # categories/:id/users
+
+        if params[:category_id] && @category = Category.find_by_id(params[:category_id])
+            @ideas = Idea.all
+        else
+            @users = User.all
+
+        end
+    end
 
     def show
 
