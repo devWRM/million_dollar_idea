@@ -27,6 +27,7 @@ Rails.application.routes.draw do
 
   resources :categories do
     resources :ideas, only: [:index]
+    resources :users, only: [:index]
   end
   
   # Reduced to just the index
