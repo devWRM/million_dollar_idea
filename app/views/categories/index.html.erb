@@ -1,5 +1,11 @@
 <h2>All Categories<% if @user %> for <%= @user.username %><% end %></h2>
+<h4>Click on a category to see a list of users with ideas in that category.</h4>
 
 <% @categories.each do |category| %>
-    <%= category.label %></br>
+    <%= link_to category.label, category_users_path(category) %></br>
 <% end %>
+
+
+
+
+
