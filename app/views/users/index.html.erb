@@ -4,17 +4,17 @@
 
     <% if @category %>
 
-        <% names = [] %>
+        <% category_users = [] %>
         <% count = 0 %>
         <% @ideas.each do |idea| %>
             <% if idea.category == @category %>
                 <% count += 1 %>
-                <% names << idea.user.username %>
+                <% category_users << idea.user %>
             <% end %>
         <% end %>
 
-        <% names.uniq.each do |name| %>
-            <%= name %></br></br>
+        <% category_users.uniq.each do |category_user| %>
+            <%= link_to category_user.username, user_ideas_path(category_user) %></br></br>
         <% end %>
 
         <% if count == 0 %>There are no users for this category <% end %>
