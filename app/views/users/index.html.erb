@@ -1,0 +1,32 @@
+
+
+<h2>All users <% if @category %>for the category: <%= @category.label %><% end %></h2>
+
+    <% if @category %>
+
+        <% names = [] %>
+        <% count = 0 %>
+        <% @ideas.each do |idea| %>
+            <% if idea.category == @category %>
+                <% count += 1 %>
+                <% names << idea.user.username %>
+            <% end %>
+        <% end %>
+
+        <% names.uniq.each do |name| %>
+            <%= name %></br></br>
+        <% end %>
+
+        <% if count == 0 %>There are no users for this category <% end %>
+
+    <% else %>
+
+        <% @users.each do |user| %>
+            <%= user.username %></br></br>
+        <% end %>
+
+    <% end %>
+
+
+
+
