@@ -39,6 +39,17 @@
 
 
 
+            <p>Or create a new Category: </p>
+            <div>
+                <%= f.fields_for :category do |c| %>
+                    
+                    <%= c.text_field :label %>
+                <% end %>
+            </div>
+
+
+
+
         </br></br>
     <%= f.submit "SUBMIT" %>
 
