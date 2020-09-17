@@ -28,5 +28,12 @@ class Idea < ApplicationRecord
     end
   end
 
+  # def resource_attributes=(attr)
+  #   self.resource = Resource.find_or_create_by(attr) if !attr[:source].blank?
+  # end
+
+  def category_attributes=(attr)
+    self.category = Category.find_or_create_by(attr) if !attr[:label].blank?
+  end
 
 end
