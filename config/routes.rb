@@ -30,7 +30,7 @@ Rails.application.routes.draw do
   
   # Reduced to just the index
   resources :users do
-    resources :ideas, only: [:index]  # :new, :create     <<= All a specific user’s ideas
+    resources :ideas, only: [:index]  # ** :new, :create     <<= All a specific user’s ideas
     resources :resources, only: [:index]
     resources :categories, only: [:index]
   end
