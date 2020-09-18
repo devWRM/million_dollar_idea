@@ -4,7 +4,7 @@ class Resource < ApplicationRecord
 
     belongs_to :idea     # To enable:     resource.idea
 
-    validates :source, presence: true
+    validates :source, presence: true # ERROR  message: "Enter a resource, please."
 
 
     # def idea_attributes=(attr)
