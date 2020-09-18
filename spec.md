@@ -24,6 +24,8 @@ Specs:
 
 - [x] Include reasonable validations for simple model objects (list of model objects with validations e.g. User, Recipe, Ingredient, Item)
     > User =>> validates :username, :email, uniqueness: true, presence: true
+    > Idea =>> validates :title, :inspiration, :plan, :budgeted_dollars, :spent_dollars, presence: true
+    > Resource =>> validates :source, presence: true
 
 - [x] Include a class level ActiveRecord scope method (model object & class method name and URL to see the working feature e.g. User.most_recipes URL: /users/most_recipes)
     > Idea =>> scope :alpha, -> { order(:title) }
