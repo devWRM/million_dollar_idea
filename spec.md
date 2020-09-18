@@ -12,15 +12,15 @@ Specs:
 
 - [x] Include at least two has_many through relationships
      (x has_many y through z; e.g. Recipe has_many Items through Ingredients)
-    > resource =>> has_many :ideas, through: :supports
-    > idea =>> has_many :supported_resources, through: :supports, source: :resource
+    > category =>> has_many :users, through: :ideas
+    > user =>> has_many :resources, through: :ideas
 
 - [x] Include at least one many-to-many relationship (x has_many y through z, y has_many x through z; e.g. Recipe has_many Items through Ingredients, Item has_many Recipes through Ingredients)
-    > resource =>> has_many :ideas, through: :supports
-    > idea =>> has_many :supported_resources, through: :supports, source: :resource
+    > category =>> has_many :users, through: :ideas
+    > user =>> has_many :categories, through: :ideas
 
 - [x] The "through" part of the has_many through includes at least one user submittable attribute, that is to say, some attribute other than its foreign keys that can be submitted by the app's user (goal.statement & support.cost)
-    > Support has a cost attribute
+    > Category has a label attribute
 
 - [x] Include reasonable validations for simple model objects (list of model objects with validations e.g. User, Recipe, Ingredient, Item)
     > User =>> validates :username, :email, uniqueness: true, presence: true
@@ -41,7 +41,7 @@ Specs:
     > Google OmniAuth
 
 - [x] Include nested resource show or index (URL e.g. users/2/recipes)
-    > Ideas nested in Users (users/1/ideas)
+    > Users nested in Categories (categories/1/users)
 
 - [x] Include nested resource "new" form (URL e.g. recipes/1/ingredients/new)
     > Resources nested in Ideas (ideas/3/resources/new)
