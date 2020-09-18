@@ -8,7 +8,7 @@ class Idea < ApplicationRecord
   has_many :resources, :dependent => :destroy   # To enable:  resource.idea
 
 
-  accepts_nested_attributes_for :category
+  # accepts_nested_attributes_for :category
   
 
   validates :title, :inspiration, :plan, :budgeted_dollars, :spent_dollars, presence: true
