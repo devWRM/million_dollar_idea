@@ -20,12 +20,12 @@ Rails.application.routes.draw do
 
   resources :ideas do
     
-    resources :resources, only: [:new, :create, :index]
+    resources :resources, only: [:new, :create, :index] # **
   end
 
   resources :categories do
     resources :ideas, only: [:index]
-    resources :users, only: [:index]
+    resources :users, only: [:index] # **
   end
   
   # Reduced to just the index
