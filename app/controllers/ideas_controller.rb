@@ -35,7 +35,7 @@ class IdeasController < ApplicationController
             # redirect_to idea_path
             redirect_to user_ideas_path(current_user)
         else
-            flash[:message] = "Please select or enter a category and make sure all the other boxes are filled in."
+            flash[:message] = "Make sure the boxes below are filled in then select or enter a category before submitting."
             redirect_to new_idea_path
             # render :new
         end
