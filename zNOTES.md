@@ -207,3 +207,11 @@ FILE views/resources/index.html.erb
 
 <h2>All Resources<% if @idea %> for: <%= @idea.title %> <% end %><h2>
 
+
+
+
+COMPARING
+
+    <%= link_to "Delete", person, method: :delete, data: { confirm: "Really?" } %>
+    <%= button_to "Delete Image", image_path(@image), method: :delete %>
+
