@@ -34,12 +34,12 @@
      
         <p>Select a Category: </p>
             <div>
-                <%= f.collection_select :category_id, Category.all, :id, :label %>
+                <%= f.collection_select :category_id, @categories, :id, :label, prompt: "Click for category list" %>
             </div>
 
 
 
-            <p>Or create a new Category: </p>
+            <p>Or enter a new Category: </p>
             <div>
                 <%= f.fields_for :category do |c| %>
                     
