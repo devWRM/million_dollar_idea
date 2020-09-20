@@ -36,4 +36,8 @@ class Idea < ApplicationRecord
     self.category = Category.find_or_create_by(attr) if !attr[:label].blank?
   end
 
+  def category_attributes
+    self.category ? self.category : nil
+  end
+
 end
