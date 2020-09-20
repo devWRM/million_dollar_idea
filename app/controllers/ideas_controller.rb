@@ -26,6 +26,7 @@ class IdeasController < ApplicationController
     def new
         @idea = Idea.new
         @idea.build_category
+        @categories = Category.all
     end
 
     def create
@@ -34,8 +35,9 @@ class IdeasController < ApplicationController
             # redirect_to idea_path
             redirect_to user_ideas_path(current_user)
         else
-            # flash[:message] = "Received invalid input, please try again."
-            render :new
+            flash[:message] = "Please select or enter a category and make sure all the other boxes are filled in."
+            redirect_to new_idea_path
+            # render :new
         end
     end
 
